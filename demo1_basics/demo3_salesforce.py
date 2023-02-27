@@ -19,8 +19,10 @@ if __name__ == "__main__":
     select_job_title = Select(driver.find_element(By.XPATH, "//select[@name='UserTitle']"))
     select_job_title.select_by_visible_text("IT Manager")
 
-    driver.find_element(By.XPATH, "//input[@name='CompanyName']").send_keys("Pathways")
+    # driver.find_element(By.XPATH, "//input[@name='CompanyName']").send_keys("Pathways")
 
+    error = driver.find_element(By.XPATH, "span[contains(@id='CompanyName-fsJj-errMsg')]").text()
+    print(error)
     driver.find_element(By.XPATH, "//input[@name='UserPhone']").send_keys("3748223955")
 
     select_employee = Select(driver.find_element(By.XPATH, "//select[@name='CompanyEmployees']"))
